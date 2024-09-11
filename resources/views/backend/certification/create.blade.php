@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="col-12">
-                    <button certification="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>

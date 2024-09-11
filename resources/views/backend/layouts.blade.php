@@ -130,7 +130,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route('othersprofit.index') }}">
                     <i class="bi bi-node-plus"></i>
                     <span>Others Profit</span>
                 </a>
