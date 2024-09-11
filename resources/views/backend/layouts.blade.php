@@ -144,7 +144,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route('costing.index') }}">
                     <i class="bi bi-node-plus"></i>
                     <span>Add Costing</span>
                 </a>

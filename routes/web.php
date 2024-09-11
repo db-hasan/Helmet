@@ -6,6 +6,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CostTypeController;
+use App\Http\Controllers\CostingController;
 use App\Http\Controllers\OthersProfitController;
 
 
@@ -86,6 +87,12 @@ Route::group(['middleware'=>'isAdmin'],function(){
     Route::post('costtype-insert',[CostTypeController::class,'storecosttype'])->name('costtype.store');
     Route::get('costtype-update/{id}',[CostTypeController::class,'editcosttype'])->name('costtype.edit');
     Route::put('costtype-update/{id}',[CostTypeController::class,'updatecosttype'])->name('costtype.update');
+
+    Route::get('costing-index',[CostingController::class, 'indexcosting'])->name('costing.index');
+    Route::get('costing-insert',[CostingController::class,'createcosting'])->name('costing.create');
+    Route::post('costing-insert',[CostingController::class,'storecosting'])->name('costing.store');
+    Route::get('costing-update/{id}',[CostingController::class,'editcosting'])->name('costing.edit');
+    Route::put('costing-update/{id}',[CostingController::class,'updatecosting'])->name('costing.update');
 
     Route::get('othersprofit-index',[OthersProfitController::class, 'indexothersprofit'])->name('othersprofit.index');
     Route::get('othersprofit-insert',[OthersProfitController::class,'createothersprofit'])->name('othersprofit.create');
