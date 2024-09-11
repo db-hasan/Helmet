@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CostTypeController;
 
 
 /*
@@ -78,4 +79,10 @@ Route::group(['middleware'=>'isAdmin'],function(){
     Route::post('certification-insert',[CategoryController::class,'storecertification'])->name('certification.store');
     Route::get('certification-update/{id}',[CategoryController::class,'editcertification'])->name('certification.edit');
     Route::put('certification-update/{id}',[CategoryController::class,'updatecertification'])->name('certification.update');
+
+    Route::get('costtype-index',[CostTypeController::class, 'indexcosttype'])->name('costtype.index');
+    Route::get('costtype-insert',[CostTypeController::class,'createcosttype'])->name('costtype.create');
+    Route::post('costtype-insert',[CostTypeController::class,'storecosttype'])->name('costtype.store');
+    Route::get('costtype-update/{id}',[CostTypeController::class,'editcosttype'])->name('costtype.edit');
+    Route::put('costtype-update/{id}',[CostTypeController::class,'updatecosttype'])->name('costtype.update');
 });
