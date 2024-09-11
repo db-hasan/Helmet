@@ -15,7 +15,7 @@
             <ul class="d-flex align-items-center">
                 <li class="nav-item dropdown">
                     <a class="nav-link nav-icon" href="">
-                        <i class="bi bi-qr-code-scan"></i>
+                        <i class="bi bi-shop-window"></i>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -28,9 +28,9 @@
                         data-bs-toggle="dropdown">
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Profile"
                             class="rounded-circle">
-                            @if(auth()->check())
-                                <span class="d-none d-md-block dropdown-toggle ps-2">{{ auth()->user()->name }}</span>
-                            @endif
+                        @if (auth()->check())
+                            <span class="d-none d-md-block dropdown-toggle ps-2">{{ auth()->user()->name }}</span>
+                        @endif
 
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -50,60 +50,144 @@
     <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
             @can('dashboard-index')
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('dashboard') }}">
-                    <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="{{ route('dashboard') }}">
+                        <i class="bi bi-grid"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
             @endcan
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-images"></i>
-                    <span>Nav Link</span>
+                <a class="nav-link collapsed" data-bs-target="#categories" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>Categories</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
+                <ul id="categories" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Helmet Types</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Helmet Brand</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Helmet Model</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Helmet Size</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Helmet Color</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Certification</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-gem"></i>
-                    <span>Nav Link</span>
+                    <span>Product List</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="">
-                    <i class="bi bi-person-lines-fill"></i>
-                    <span>Nav Link</span>
+                    <i class="bi bi-shop-window"></i>
+                    <span>Add Stock</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-cart3"></i>
+                    <span>Sales Product</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-arrow-return-left"></i>
+                    <span>Return</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-dash-circle"></i>
+                    <span>Damage</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-node-plus"></i>
+                    <span>Others Profit</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-tags"></i>
+                    <span>Cost Type</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-node-plus"></i>
+                    <span>Add Costing</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-bar-chart"></i>
+                    <span>Report</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-journal-text"></i>
+                    <span>Banance Sheet</span>
                 </a>
             </li>
 
             @can('role-index')
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('role.index') }}">
-                    <i class="bi bi-shield-lock"></i>
-                    <span>Role Permission</span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="{{ route('role.index') }}">
+                        <i class="bi bi-shield-lock"></i>
+                        <span>Role Permission</span>
+                    </a>
+                </li>
             @endcan
 
             @can('user-index')
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('user.index') }}">
-                    <i class="bi bi-people"></i>
-                    <span>Manage Role</span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="{{ route('user.index') }}">
+                        <i class="bi bi-people"></i>
+                        <span>Manage Role</span>
+                    </a>
+                </li>
             @endcan
 
             @can('profle-update')
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('profle.update') }}">
-                    <i class="bi bi-database-lock"></i>
-                    <span>Password</span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="{{ route('profle.update') }}">
+                        <i class="bi bi-database-lock"></i>
+                        <span>Password</span>
+                    </a>
+                </li>
             @endcan
 
             <li class="nav-item">
