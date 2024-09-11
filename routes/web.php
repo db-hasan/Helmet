@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CategoryController;
 
 
 /*
@@ -40,4 +41,41 @@ Route::group(['middleware'=>'isAdmin'],function(){
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('profle-update',[AuthController::class,'profileupdate'])->name('profle.update');
     Route::post('profle-update',[AuthController::class,'passwordupdate'])->name('password.update');
+
+
+    Route::get('type-index',[CategoryController::class, 'indextype'])->name('type.index');
+    Route::get('type-insert',[CategoryController::class,'createtype'])->name('type.create');
+    Route::post('type-insert',[CategoryController::class,'storetype'])->name('type.store');
+    Route::get('type-update/{id}',[CategoryController::class,'edittype'])->name('type.edit');
+    Route::put('type-update/{id}',[CategoryController::class,'updatetype'])->name('type.update');
+
+    Route::get('brand-index',[CategoryController::class, 'indexbrand'])->name('brand.index');
+    Route::get('brand-insert',[CategoryController::class,'createbrand'])->name('brand.create');
+    Route::post('brand-insert',[CategoryController::class,'storebrand'])->name('brand.store');
+    Route::get('brand-update/{id}',[CategoryController::class,'editbrand'])->name('brand.edit');
+    Route::put('brand-update/{id}',[CategoryController::class,'updatebrand'])->name('brand.update');
+
+    Route::get('model-index',[CategoryController::class, 'indexmodel'])->name('model.index');
+    Route::get('model-insert',[CategoryController::class,'createmodel'])->name('model.create');
+    Route::post('model-insert',[CategoryController::class,'storemodel'])->name('model.store');
+    Route::get('model-update/{id}',[CategoryController::class,'editmodel'])->name('model.edit');
+    Route::put('model-update/{id}',[CategoryController::class,'updatemodel'])->name('model.update');
+
+    Route::get('size-index',[CategoryController::class, 'indexsize'])->name('size.index');
+    Route::get('size-insert',[CategoryController::class,'createsize'])->name('size.create');
+    Route::post('size-insert',[CategoryController::class,'storesize'])->name('size.store');
+    Route::get('size-update/{id}',[CategoryController::class,'editsize'])->name('size.edit');
+    Route::put('size-update/{id}',[CategoryController::class,'updatesize'])->name('size.update');
+
+    Route::get('color-index',[CategoryController::class, 'indexcolor'])->name('color.index');
+    Route::get('color-insert',[CategoryController::class,'createcolor'])->name('color.create');
+    Route::post('color-insert',[CategoryController::class,'storecolor'])->name('color.store');
+    Route::get('color-update/{id}',[CategoryController::class,'editcolor'])->name('color.edit');
+    Route::put('color-update/{id}',[CategoryController::class,'updatecolor'])->name('color.update');
+
+    Route::get('certification-index',[CategoryController::class, 'indexcertification'])->name('certification.index');
+    Route::get('certification-insert',[CategoryController::class,'createcertification'])->name('certification.create');
+    Route::post('certification-insert',[CategoryController::class,'storecertification'])->name('certification.store');
+    Route::get('certification-update/{id}',[CategoryController::class,'editcertification'])->name('certification.edit');
+    Route::put('certification-update/{id}',[CategoryController::class,'updatecertification'])->name('certification.update');
 });

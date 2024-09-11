@@ -64,32 +64,32 @@
                 </a>
                 <ul id="categories" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="">
+                        <a href="{{ route('type.index') }}">
                             <i class="bi bi-circle"></i><span>Helmet Types</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('brand.index') }}">
                             <i class="bi bi-circle"></i><span>Helmet Brand</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('model.index') }}">
                             <i class="bi bi-circle"></i><span>Helmet Model</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('size.index') }}">
                             <i class="bi bi-circle"></i><span>Helmet Size</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('color.index') }}">
                             <i class="bi bi-circle"></i><span>Helmet Color</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('certification.index') }}">
                             <i class="bi bi-circle"></i><span>Certification</span>
                         </a>
                     </li>
