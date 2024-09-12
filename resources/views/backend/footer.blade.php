@@ -1,68 +1,16 @@
     <!-- Vendor JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ asset('backend/vendor/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('backend/jquery-3.7.1.min.js') }} "></script>
     <script src="{{ asset('backend/vendor/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('backend/jquery-3.7.1.min.js') }} "></script>
+    
     <script src="{{ asset('backend/js/main.js') }}"></script>
-    <script src="{{ asset('backend/js/dataTables.js') }} "></script>
     <script src="{{ asset('backend/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('backend/vendor/chart.js/chart.umd.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.8.0/full-all/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
-    {{-- TextColor CKEDITOR --}}
-    <script>
-        CKEDITOR.replace('editor', {
-            skin: 'moono',
-            enterMode: CKEDITOR.ENTER_BR,
-            shiftEnterMode: CKEDITOR.ENTER_P,
-            toolbar: [{
-                    name: 'basicstyles',
-                    groups: ['basicstyles'],
-                    items: ['Bold', 'Italic', 'Underline', "-", 'TextColor', 'BGColor']
-                },
-                {
-                    name: 'styles',
-                    items: ['Format', 'Font', 'FontSize']
-                },
-                {
-                    name: 'scripts',
-                    items: ['Subscript', 'Superscript']
-                },
-                {
-                    name: 'justify',
-                    groups: ['blocks', 'align'],
-                    items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
-                },
-                {
-                    name: 'paragraph',
-                    groups: ['list', 'indent'],
-                    items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent']
-                },
-                {
-                    name: 'links',
-                    items: ['Link', 'Unlink']
-                },
-                {
-                    name: 'insert',
-                    items: ['Image']
-                },
-                {
-                    name: 'spell',
-                    items: ['jQuerySpellChecker']
-                },
-                {
-                    name: 'table',
-                    items: ['Table']
-                }
-            ],
-        });
-    </script>
-
-    {{-- DataTable --}}
-    <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-    </script>
 
     {{-- sweetalert --}}
     <script>
@@ -129,4 +77,11 @@
             }
             toastr.warning("{{ session('warning') }}");
         @endif
+    </script>
+
+    {{-- select2 --}}
+    <script>
+        $(document).ready(function () {
+        $('.js-example-basic-multiple').select2();
+        });
     </script>
