@@ -25,10 +25,12 @@
                 <div class="col-md-12 pb-3">
                     <label for="costtype_id" class="form-label">Costing Name<span class="text-danger">*</span></label>
                     <select id="costtype_id" name="costtype_id" class="form-select" required>
+                        <option selected disabled>Select One</option>
                         @foreach ($costtypes as $costtype)
-                            <option selected value="{{ $costtype->id }}">{{ $costtype->name }}</option>
+                            <option value="{{ $costtype->id }}">{{ $costtype->name }}</option>
                         @endforeach
                     </select>
+                    
                     @error('costtype_id')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

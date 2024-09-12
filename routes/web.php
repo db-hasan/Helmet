@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CostTypeController;
 use App\Http\Controllers\CostingController;
 use App\Http\Controllers\OthersProfitController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -99,4 +100,10 @@ Route::group(['middleware'=>'isAdmin'],function(){
     Route::post('othersprofit-insert',[OthersProfitController::class,'storeothersprofit'])->name('othersprofit.store');
     Route::get('othersprofit-update/{id}',[OthersProfitController::class,'editothersprofit'])->name('othersprofit.edit');
     Route::put('othersprofit-update/{id}',[OthersProfitController::class,'updateothersprofit'])->name('othersprofit.update');
+
+    Route::get('product-index',[ProductController::class, 'indexproduct'])->name('product.index');
+    Route::get('product-insert',[ProductController::class,'createproduct'])->name('product.create');
+    Route::post('product-insert',[ProductController::class,'storeproduct'])->name('product.store');
+    Route::get('product-update/{id}',[ProductController::class,'editproduct'])->name('product.edit');
+    Route::put('product-update/{id}',[ProductController::class,'updateproduct'])->name('product.update');
 });

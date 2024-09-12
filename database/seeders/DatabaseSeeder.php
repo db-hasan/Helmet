@@ -26,8 +26,7 @@ class DatabaseSeeder extends Seeder
     ];
 
     private $types = [
-        'Full Face', 'Half Shell', 'Modular', 'Off Road',
-        'Open Face', 'Cap', 'Dual Sport',
+        'Full Face', 'Half Shell', 'Modular', 'Off Road', 'Open Face', 'Cap', 'Dual Sport',
     ];
 
     private $brands = [
@@ -42,7 +41,7 @@ class DatabaseSeeder extends Seeder
         'XS', 'S', 'M', 'L', 'XL', 'XXL', 'Others',
     ];
     private $colors = [
-        'Blue', 'Red', 'Black', 'White', 'Pink', 'Grey', 'Yellow', 'Mix Color','Various print', 'Others',
+        'Blue', 'Red', 'Black', 'White', 'Pink', 'Grey', 'Yellow', 'Mix Color','Various Print', 'Others',
     ];
 
     private $certifications = [

@@ -7,7 +7,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <a href="" class="logo d-flex align-items-center">
                 <img src="{{ asset('backend/img/favicon.jpg') }}" alt="">
-                <span class="d-none d-lg-block">SOFTxONE</span>
+                <span class="d-none d-lg-block">Logo Here</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div>
@@ -95,12 +95,22 @@
                     </li>
                 </ul>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-gem"></i>
-                    <span>Product List</span>
+                <a class="nav-link collapsed" data-bs-target="#products" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-gem"></i><span>Product</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
+                <ul id="products" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('product.index') }}">
+                            <i class="bi bi-circle"></i><span>Product List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('product.create')}}">
+                            <i class="bi bi-circle"></i><span>Add Product</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             <li class="nav-item">
