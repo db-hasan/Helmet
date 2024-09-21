@@ -10,7 +10,7 @@ use App\Models\CostType;
 class CostTypeController extends Controller
 {
     public function indexcosttype() {
-        $costtypes = CostType::latest()->get();
+        $costtypes = CostType::orderBy('id', 'desc')->get();
         return view('backend.costtype.index',compact('costtypes'));
     }
     

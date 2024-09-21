@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($colors as $color)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$color->id}}</td>
                             <td>{{ $color->name}}</td>
                             <td>
                                 @if($color->status == 1)

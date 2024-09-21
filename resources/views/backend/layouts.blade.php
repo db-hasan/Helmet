@@ -126,7 +126,7 @@
                 </a>
                 <ul id="stock" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="">
+                        <a href="{{ route('warehouse.index') }}">
                             <i class="bi bi-circle"></i><span>Warehouse</span>
                         </a>
                     </li>

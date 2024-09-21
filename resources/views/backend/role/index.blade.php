@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($roles as $role)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$role->id}}</td>
                             <td>{{ $role->name}}</td>
                             <td>
                                 @if(!empty($role->getPermissionNames()))

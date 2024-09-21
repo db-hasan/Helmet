@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($costtypes as $costtype)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$costtype->id}}</td>
                             <td>{{ $costtype->name}}</td>
                             <td>
                                 @if($costtype->status == 1)

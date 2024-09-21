@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($models as $model)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$model->id}}</td>
                             <td>{{ $model->name}}</td>
                             <td>
                                 @if($model->status == 1)

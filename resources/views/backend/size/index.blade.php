@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($sizes as $size)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$size->id}}</td>
                             <td>{{ $size->name}}</td>
                             <td>
                                 @if($size->status == 1)

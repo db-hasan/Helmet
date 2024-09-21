@@ -26,7 +26,7 @@ class CategoryController extends Controller
     // ***********Product Type Funcation************
 
     public function indextype() {
-        $types = Type::latest()->get();
+        $types = Type::orderBy('id', 'desc')->get();
         return view('backend.type.index',compact('types'));
     }
     
@@ -79,7 +79,7 @@ class CategoryController extends Controller
     // ***********Product Brand Funcation************
 
     public function indexbrand() {
-        $brands = Brand::latest()->get();
+        $brands = Brand::orderBy('id', 'desc')->get();
         return view('backend.brand.index',compact('brands'));
     }
     
@@ -131,7 +131,7 @@ class CategoryController extends Controller
 
     // ***********Product Model Funcation************
     public function indexmodel() {
-        $models = Modeles::latest()->get();
+        $models = Modeles::orderBy('id', 'desc')->get();
         return view('backend.model.index',compact('models'));
     }
     
@@ -186,7 +186,7 @@ class CategoryController extends Controller
     // ***********Product Size Funcation************
 
     public function indexsize() {
-        $sizes = Size::latest()->get();
+        $sizes = Size::orderBy('id', 'desc')->get();
         return view('backend.size.index',compact('sizes'));
     }
     
@@ -241,7 +241,7 @@ class CategoryController extends Controller
     // ***********Product Color Funcation************
 
     public function indexcolor() {
-        $colors = Color::latest()->get();
+        $colors = Color::orderBy('id', 'desc')->get();
         return view('backend.color.index',compact('colors'));
     }
     
@@ -296,7 +296,7 @@ class CategoryController extends Controller
     // *****Product Certification Funcation******
     
 public function indexcertification() {
-        $certifications = Certification::latest()->get();
+        $certifications = Certification::orderBy('id', 'desc')->get();
         return view('backend.certification.index',compact('certifications'));
     }
     

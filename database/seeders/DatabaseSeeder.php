@@ -15,6 +15,7 @@ use App\Models\Size;
 use App\Models\Color;
 use App\Models\Certification;
 use App\Models\CostType;
+use App\Models\Warehouse;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +25,11 @@ class DatabaseSeeder extends Seeder
         'dashboard-index',
         'profle-update',
     ];
+
+    private $warehouses = [
+        'Warehouse 1', 'Warehouse 2', 'Warehouse 3', 'Warehouse 4', 'Others',
+    ];
+
 
     private $types = [
         'Full Face', 'Half Shell', 'Modular', 'Off Road', 'Open Face', 'Cap', 'Dual Sport',
@@ -59,6 +65,10 @@ class DatabaseSeeder extends Seeder
     {
         foreach ($this->permissions as $permission) {
             Permission::create(['name' => $permission]);
+        };
+
+        foreach ($this->warehouses as $warehouse) {
+            Warehouse::create(['name' => $warehouse]);
         };
 
         foreach ($this->types as $type) {

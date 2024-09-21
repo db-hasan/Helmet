@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($types as $type)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$type->id}}</td>
                             <td>{{ $type->name}}</td>
                             <td>
                                 @if($type->status == 1)

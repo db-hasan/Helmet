@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($certifications as $certification)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$certification->id}}</td>
                             <td>{{ $certification->name}}</td>
                             <td>
                                 @if($certification->status == 1)

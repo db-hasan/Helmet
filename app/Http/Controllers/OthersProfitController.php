@@ -10,7 +10,7 @@ use App\Models\OthersProfit;
 class OthersProfitController extends Controller
 {
     public function indexothersprofit() {
-        $othersprofits = OthersProfit::latest()->get();
+        $othersprofits = OthersProfit::orderBy('id', 'desc')->get();
         return view('backend.othersprofit.index',compact('othersprofits'));
     }
     

@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($brands as $brand)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$brand->id}}</td>
                             <td>{{ $brand->name}}</td>
                             <td>
                                 @if($brand->status == 1)

@@ -9,6 +9,7 @@ use App\Http\Controllers\CostTypeController;
 use App\Http\Controllers\CostingController;
 use App\Http\Controllers\OthersProfitController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WarehouseController;
 
 
 /*
@@ -46,6 +47,11 @@ Route::group(['middleware'=>'isAdmin'],function(){
     Route::get('profle-update',[AuthController::class,'profileupdate'])->name('profle.update');
     Route::post('profle-update',[AuthController::class,'passwordupdate'])->name('password.update');
 
+    Route::get('warehouse-index',[WarehouseController::class, 'indexwarehouse'])->name('warehouse.index');
+    Route::get('warehouse-insert',[WarehouseController::class,'createwarehouse'])->name('warehouse.create');
+    Route::post('warehouse-insert',[WarehouseController::class,'storewarehouse'])->name('warehouse.store');
+    Route::get('warehouse-update/{id}',[WarehouseController::class,'editwarehouse'])->name('warehouse.edit');
+    Route::put('warehouse-update/{id}',[WarehouseController::class,'updatewarehouse'])->name('warehouse.update');
 
     Route::get('type-index',[CategoryController::class, 'indextype'])->name('type.index');
     Route::get('type-insert',[CategoryController::class,'createtype'])->name('type.create');
