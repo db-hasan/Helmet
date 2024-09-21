@@ -105,6 +105,12 @@
                             <i class="bi bi-circle"></i><span>Product List</span>
                         </a>
                     </li>
+                    
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>InActive</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="{{ route('product.create')}}">
                             <i class="bi bi-circle"></i><span>Add Product</span>
@@ -113,17 +119,49 @@
                 </ul>
             </li>
 
+
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-shop-window"></i>
-                    <span>Add Stock</span>
+                <a class="nav-link collapsed" data-bs-target="#stock" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-shop-window"></i><span>Stock</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
+                <ul id="stock" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Warehouse</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Add Stock</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Low Stock</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Stock Report</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Stock Transfer</span>
+                        </a>
+                    </li>
+
+                    
+                </ul>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="">
                     <i class="bi bi-cart3"></i>
-                    <span>Sales Product</span>
+                    <span>Sales</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -140,44 +178,78 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('othersprofit.index') }}">
-                    <i class="bi bi-node-plus"></i>
-                    <span>Others Profit</span>
+                <a class="nav-link collapsed" data-bs-target="#report" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-bar-chart"></i><span>Report</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
+                <ul id="report" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Sales Report</span>
+                        </a>
+                    </li>
+                      
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Return Report</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Damage Report</span>
+                        </a>
+                    </li>
+
+                </ul>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('costtype.index') }}">
-                    <i class="bi bi-tags"></i>
-                    <span>Cost Type</span>
+                <a class="nav-link collapsed" data-bs-target="#accounts" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-bank"></i><span>Accounts</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-            </li>
+                <ul id="accounts" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('othersprofit.index') }}">
+                            <i class="bi bi-circle"></i><span>Add Profits</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="{{ route('costtype.index') }}">
+                            <i class="bi bi-circle"></i><span>Cost Type</span>
+                        </a>
+                    </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('costing.index') }}">
-                    <i class="bi bi-node-plus"></i>
-                    <span>Add Costing</span>
-                </a>
+                    <li>
+                        <a href="{{ route('costing.index') }}">
+                            <i class="bi bi-circle"></i><span>Add Costing</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Profits Report</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Costing Report</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Banance Sheet</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-bar-chart"></i>
-                    <span>Report</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-journal-text"></i>
-                    <span>Banance Sheet</span>
-                </a>
-            </li>
 
             @can('role-index')
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ route('role.index') }}">
                         <i class="bi bi-shield-lock"></i>
-                        <span>Role Permission</span>
+                        <span>Permission</span>
                     </a>
                 </li>
             @endcan
@@ -220,7 +292,7 @@
             &copy; Copyright <strong><span>SOFTxONE</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="https://softxone.com/">SOFTxOne Limited</a>
+            Designed by <a href="https://softxone.com/">SOFTxONE Limited</a>
         </div>
     </footer>
     <!-- End Footer -->
