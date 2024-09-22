@@ -110,6 +110,6 @@ class DatabaseSeeder extends Seeder
         $user->syncRoles([$role->id]);
 
 
-        Product::factory(10)->create();
+        Product::factory(50)->create();
     }
 }

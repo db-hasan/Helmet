@@ -54,6 +54,7 @@ class ProductController extends Controller
             'vat' => 'required|numeric',
             'tax' => 'required|numeric',
             'desc' => 'nullable|string',
+            'img' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
         try {
@@ -120,6 +121,7 @@ class ProductController extends Controller
             'vat' => 'required|numeric',
             'tax' => 'required|numeric',
             'desc' => 'nullable|string',
+            'img' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
             'status' => 'required|in:1,2',
         ]);
 

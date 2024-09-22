@@ -45,6 +45,7 @@ class ProductFactory extends Factory
             'vat' => $this->faker->randomFloat(2, 5, 20), // example VAT percentage
             'tax' => $this->faker->randomFloat(2, 5, 20), // example tax percentage
             'desc' => $this->faker->sentence, // random description
+            'img' => $this->faker->optional()->imageUrl(), // nullable image URL
             'status' => 1, // active status
         ];
     }

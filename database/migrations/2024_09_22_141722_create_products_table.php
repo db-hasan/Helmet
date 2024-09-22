@@ -26,7 +26,8 @@ return new class extends Migration
             $table->integer('stock_qty'); // Change to integer
             $table->decimal('vat', 5, 2); // Change to decimal
             $table->decimal('tax', 5, 2); // Change to decimal
-            $table->text('desc');
+            $table->text('desc')->nullable();
+            $table->string('img')->nullable();
             $table->integer('status')->default(1);
             $table->timestamps();
         });

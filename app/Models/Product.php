@@ -26,6 +26,7 @@ class Product extends Model
         'vat',
         'tax',
         'desc',
+        'img',
         'status',
     ];
     public function brand(): BelongsTo
