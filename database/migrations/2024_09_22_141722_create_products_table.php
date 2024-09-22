@@ -20,17 +20,18 @@ return new class extends Migration
             $table->foreignId('color_id')->constrained()->onDelete('cascade');
             $table->foreignId('certification_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('purchase_price');
-            $table->string('wholesale_price');
-            $table->string('retail_price');
-            $table->string('stock_qty');
-            $table->string('vat');
-            $table->string('tax');
+            $table->decimal('purchase_price', 10, 2); // Change to decimal
+            $table->decimal('wholesale_price', 10, 2); // Change to decimal
+            $table->decimal('retail_price', 10, 2); // Change to decimal
+            $table->integer('stock_qty'); // Change to integer
+            $table->decimal('vat', 5, 2); // Change to decimal
+            $table->decimal('tax', 5, 2); // Change to decimal
             $table->text('desc');
             $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

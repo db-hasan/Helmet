@@ -16,6 +16,8 @@ use App\Models\Color;
 use App\Models\Certification;
 use App\Models\CostType;
 use App\Models\Warehouse;
+use App\Models\Product;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -106,5 +108,8 @@ class DatabaseSeeder extends Seeder
 
         $role->syncPermissions($permissions);
         $user->syncRoles([$role->id]);
+
+
+        Product::factory(10)->create();
     }
 }

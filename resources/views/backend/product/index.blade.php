@@ -71,6 +71,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Name</th>
                         <th>Brand</th>
                         <th>Models</th>
                         <th>Type</th>
@@ -92,6 +93,7 @@
                     @foreach ($products as $product)
                         <tr>
                             <td>{{$product->id}}</td>
+                            <td>{{$product->name}}</td>
                             <td>{{ $product->brand->name}}</td>
                             <td>{{ $product->modeles->name}}</td>
                             <td>{{ $product->type->name}}</td>
