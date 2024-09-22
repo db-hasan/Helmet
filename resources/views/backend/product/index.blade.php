@@ -8,7 +8,7 @@
                         <input type="text" class="form-control" id="search" placeholder="Search here">
                     </div>
                     <div class="col-sm-4 text-end pb-3">
-                        <a href="" class="btn btn-primary"><i class="fa-regular fa-eye"></i>
+                        <a href="{{ route('product.create')}}" class="btn btn-primary"><i class="fa-regular fa-eye"></i>
                             Add Product</a>
                     </div>
                 </div>
@@ -71,20 +71,40 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Amount</th>
-                        <th>Note</th>
+                        <th>Brand</th>
+                        <th>Models</th>
+                        <th>Type</th>
+                        <th>Size</th>
+                        <th>Color</th>
+                        <th>Certification</th>
+                        <th>Purchase</th>
+                        <th>Wholesale</th>
+                        <th>Retail</th>
+                        <th>Stock</th>
+                        <th>Vat</th>
+                        <th>Tax</th>
+                        <th>Description</th>
                         <th>Status</th>
                         <th class="text-end">Action</th>
                     </tr>
                 </thead>
-                {{-- <tbody>
+                <tbody>
                     @foreach ($products as $product)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
-                            <td>{{ $product->costtype->name}}</td>
-                            <td>{{ $product->amount}}</td>
-                            <td>{{ $product->note}}</td>
+                            <td>{{$product->id}}</td>
+                            <td>{{ $product->brand->name}}</td>
+                            <td>{{ $product->modeles->name}}</td>
+                            <td>{{ $product->type->name}}</td>
+                            <td>{{ $product->size->name}}</td>
+                            <td>{{ $product->color->name}}</td>
+                            <td>{{ $product->certification->name}}</td>
+                            <td>{{ $product->purchase_price}}</td>
+                            <td>{{ $product->wholesale_price}}</td>
+                            <td>{{ $product->retail_price}}</td>
+                            <td>{{ $product->stock_qty}}</td>
+                            <td>{{ $product->vat}}</td>
+                            <td>{{ $product->tax}}</td>
+                            <td>{{ $product->desc}}</td>
                             <td>
                                 @if ($product->status == 1)
                                     Active
@@ -97,7 +117,7 @@
                             </td>
                         </tr>
                     @endforeach
-                </tbody> --}}
+                </tbody>
             </table>
         </div>
     </main>
