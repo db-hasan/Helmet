@@ -10,6 +10,7 @@ use App\Http\Controllers\CostingController;
 use App\Http\Controllers\OthersProfitController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WarehouseController;
+use App\Http\Controllers\StockController;
 
 
 /*
@@ -112,4 +113,16 @@ Route::group(['middleware'=>'isAdmin'],function(){
     Route::post('product-insert',[ProductController::class,'storeproduct'])->name('product.store');
     Route::get('product-update/{id}',[ProductController::class,'editproduct'])->name('product.edit');
     Route::put('product-update/{id}',[ProductController::class,'updateproduct'])->name('product.update');
+
+    Route::get('product-inactive',[ProductController::class, 'inactiveproduct'])->name('product.inactive');
+
+
+    Route::get('stock-index',[StockController::class, 'indexstock'])->name('stock.index');
+    Route::get('stock-insert',[StockController::class,'createstock'])->name('stock.create');
+    Route::post('stock-insert',[StockController::class,'storestock'])->name('stock.store');
+    Route::get('stock-update/{id}',[StockController::class,'editstock'])->name('stock.edit');
+    Route::put('stock-update/{id}',[StockController::class,'updatestock'])->name('stock.update');
+
+    Route::get('lowstock-index',[StockController::class, 'indexlowstock'])->name('lowstock.index');
+
 });

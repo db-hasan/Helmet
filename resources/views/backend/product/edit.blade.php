@@ -3,7 +3,7 @@
     <main id="main" class="main">
         <div class="d-flex justify-content-between">
             <div class="pagetitle">
-                <h1>Update Costing</h1>
+                <h1>Update Product</h1>
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Home</a></li>
@@ -14,7 +14,7 @@
             <div class="text-end pt-2">
                 <a href="{{ route('costing.index') }}" class="btn btn-primary"><i class="fa-regular fa-eye"></i>
                     View
-                    Costing</a>
+                    Product</a>
             </div>
         </div>
         <hr>

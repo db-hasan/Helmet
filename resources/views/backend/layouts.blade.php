@@ -107,7 +107,7 @@
                     </li>
                     
                     <li>
-                        <a href="">
+                        <a href="{{ route('product.inactive') }}">
                             <i class="bi bi-circle"></i><span>InActive</span>
                         </a>
                     </li>
@@ -131,13 +131,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('stock.create')}}">
                             <i class="bi bi-circle"></i><span>Add Stock</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a href="">
+                        <a href="{{route('lowstock.index')}}">
                             <i class="bi bi-circle"></i><span>Low Stock</span>
                         </a>
                     </li>
