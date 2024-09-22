@@ -1239,3 +1239,10 @@ h6 {
 }
 
 /*Content scrollbar  End*/
+
+
+@media (max-width: 576px) {
+  .reverse {
+      flex-direction: column-reverse;
+  }
+}

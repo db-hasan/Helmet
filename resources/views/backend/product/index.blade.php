@@ -1,60 +1,70 @@
 @extends('backend/layouts')
 @section('content')
     <main id="main" class="main">
-        <div class="row">
-            <div class="col-md-4 pb-3">
-                <input type="text" class="form-control" id="search" placeholder="Search here">
-            </div>
-            <div class="col-md-2 pb-3">
-                <select id="type_id" name="type_id" class="form-select" required>
-                    <option selected disabled>Brand</option>
-                    @foreach ($brands as $brand)
-                        <option value="{{ $brand->id }}">{{ $brand->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="col-md-2 pb-3">
-                <select id="type_id" name="type_id" class="form-select" required>
-                    <option selected disabled>Models</option>
-                    @foreach ($modeles as $modele)
-                        <option value="{{ $modele->id }}">{{ $modele->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="col-md-2 pb-3">
-                <select id="type_id" name="type_id" class="form-select" required>
-                    <option selected disabled>Type</option>
-                    @foreach ($types as $type)
-                        <option value="{{ $type->id }}">{{ $type->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="col-md-2 pb-3">
-                <select id="size_id" name="size_id" class="form-select" required>
-                    <option selected disabled>Size</option>
-                    @foreach ($sizes as $size)
-                        <option value="{{ $size->id }}">{{ $size->name }}</option>
-                    @endforeach
-                </select>                    
-            </div>
-            <div class="col-md-2 pb-3">
-                <select id="color_id" name="color_id" class="form-select" required>
-                    <option selected disabled>Color</option>
-                    @foreach ($colors as $color)
-                        <option value="{{ $color->id }}">{{ $color->name }}</option>
-                    @endforeach
-                </select>                    
-            </div>
-            <div class="col-md-2 pb-3">
-                <select id="certification_id" name="certification_id" class="form-select" required>
-                    <option selected disabled>Certification</option>
-                    @foreach ($certifications as $certification)
-                        <option value="{{ $certification->id }}">{{ $certification->name }}</option>
-                    @endforeach
-                </select>                    
+        <div class="card ">
+            <div class="card-body mt-4">
+                <div class="row reverse">
+                    <div class="col-sm-8 pb-3">
+                        <input type="text" class="form-control" id="search" placeholder="Search here">
+                    </div>
+                    <div class="col-sm-4 text-end pb-3">
+                        <a href="" class="btn btn-primary"><i class="fa-regular fa-eye"></i>
+                            Add Product</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-2 pb-3">
+                        <select id="type_id" name="type_id" class="form-select" required>
+                            <option selected disabled>Brand</option>
+                            @foreach ($brands as $brand)
+                                <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-md-2 pb-3">
+                        <select id="type_id" name="type_id" class="form-select" required>
+                            <option selected disabled>Models</option>
+                            @foreach ($modeles as $modele)
+                                <option value="{{ $modele->id }}">{{ $modele->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-md-2 pb-3">
+                        <select id="type_id" name="type_id" class="form-select" required>
+                            <option selected disabled>Type</option>
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-md-2 pb-3">
+                        <select id="size_id" name="size_id" class="form-select" required>
+                            <option selected disabled>Size</option>
+                            @foreach ($sizes as $size)
+                                <option value="{{ $size->id }}">{{ $size->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-md-2 pb-3">
+                        <select id="color_id" name="color_id" class="form-select" required>
+                            <option selected disabled>Color</option>
+                            @foreach ($colors as $color)
+                                <option value="{{ $color->id }}">{{ $color->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-md-2 pb-3">
+                        <select id="certification_id" name="certification_id" class="form-select" required>
+                            <option selected disabled>Certification</option>
+                            @foreach ($certifications as $certification)
+                                <option value="{{ $certification->id }}">{{ $certification->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <hr>
         <div class="custom-scrollbar-table">
             <table class="table table-striped">
@@ -76,7 +86,7 @@
                             <td>{{ $product->amount}}</td>
                             <td>{{ $product->note}}</td>
                             <td>
-                                @if($product->status == 1)
+                                @if ($product->status == 1)
                                     Active
                                 @elseif($product->status == 2)
                                     Inactive
