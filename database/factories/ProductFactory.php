@@ -31,7 +31,7 @@ class ProductFactory extends Factory
         $certification = Certification::inRandomOrder()->first();
         
         return [
-            'name' => $this->faker->word,
+            'name' => 'Name',
             'brand_id' => $brand->id,
             'modeles_id' => $modeles->id,
             'type_id' => $type->id,
