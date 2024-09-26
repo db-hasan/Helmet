@@ -22,18 +22,10 @@
             <form method="post" action="{{ route('product.store') }}" enctype="multipart/form-data" class="row g-3 p-3">
                 @csrf
         
-                <div class="col-md-12 pb-3">
-                    <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
-                    @error('name')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-        
                 <div class="col-md-3 pb-3">
                     <label for="category_id" class="form-label">Category<span class="text-danger">*</span></label>
                     <select id="category_id" name="category_id" class="form-select" required>
-                        <option selected disabled>Brand</option>
+                        <option selected disabled>Category</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
@@ -45,7 +37,7 @@
                 <div class="col-md-3 pb-3">
                     <label for="subcategory_id" class="form-label">SubCategory<span class="text-danger">*</span></label>
                     <select id="subcategory_id" name="subcategory_id" class="form-select" required>
-                        <option selected disabled>Brand</option>
+                        <option selected disabled>SubCategory</option>
                         @foreach ($subcategories as $subcategory)
                             <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                         @endforeach
@@ -57,7 +49,7 @@
                 <div class="col-md-3 pb-3">
                     <label for="childcategory_id" class="form-label">ChildCategory<span class="text-danger">*</span></label>
                     <select id="childcategory_id" name="childcategory_id" class="form-select" required>
-                        <option selected disabled>Brand</option>
+                        <option selected disabled>ChildCategory</option>
                         @foreach ($childcategories as $childcategory)
                             <option value="{{ $childcategory->id }}">{{ $childcategory->name }}</option>
                         @endforeach
@@ -69,7 +61,7 @@
                 <div class="col-md-3 pb-3">
                     <label for="innerchild_id" class="form-label">InnerChild<span class="text-danger">*</span></label>
                     <select id="innerchild_id" name="innerchild_id" class="form-select" required>
-                        <option selected disabled>Brand</option>
+                        <option selected disabled>InnerChild</option>
                         @foreach ($innerchilds as $innerchild)
                             <option value="{{ $innerchild->id }}">{{ $innerchild->name }}</option>
                         @endforeach
