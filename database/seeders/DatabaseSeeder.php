@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\ChildCategory;
 use App\Models\InnerChild;
+use App\Models\Brand;
 use App\Models\Size;
 use App\Models\Color;
 use App\Models\Certification;
@@ -34,16 +35,19 @@ class DatabaseSeeder extends Seeder
     ];
 
 
-    // private $types = [
-    //     'Full Face', 'Half Shell', 'Modular', 'Off Road', 'Open Face', 'Cap', 'Dual Sport',
-    // ];
-
-    // private $brands = [
-    //     'Studds', 'Vega', 'LS2', 'AXOR', 'MT', 'Steelbird', 'SKT', 'IBK', 'Others',
-    // ];
+    private $categories = [
+        'Category 1', 'Category 2', 'Category 3'
+    ];
+    private $brands = [
+        'Studds', 'Vega', 'LS2', 'AXOR', 'MT', 'Steelbird', 'SKT', 'IBK', 'Others',
+    ];
 
     // private $modeles = [
     //     'THUNDER', 'BOLT', 'Others',
+    // ];
+
+        // private $type = [
+    //     'Full Face', 'Half Shell', 'Modular', 'Off Road', 'Open Face', 'Cap', 'Dual Sport',
     // ];
 
     private $sizes = [
@@ -74,6 +78,12 @@ class DatabaseSeeder extends Seeder
             Warehouse::create(['name' => $warehouse]);
         };
 
+        foreach ($this->categories as $category) {
+            Category::create(['name' => $category]);
+        };
+        foreach ($this->brands as $brand) {
+            Brand::create(['name' => $brand]);
+        };
         foreach ($this->sizes as $size) {
             Size::create(['name' => $size]);
         };

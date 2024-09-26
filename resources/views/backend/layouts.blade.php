@@ -64,7 +64,7 @@
                 </a>
                 <ul id="categories" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="">
+                        <a href="{{ route('category.index') }}">
                             <i class="bi bi-circle"></i><span>Categories</span>
                         </a>
                     </li>
@@ -91,7 +91,7 @@
                 </a>
                 <ul id="Attributes" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="">
+                        <a href="{{ route('brand.index') }}">
                             <i class="bi bi-circle"></i><span>Brands</span>
                         </a>
                     </li>

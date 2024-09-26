@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
-use Exception;
-
-use App\Models\Brand;
-use App\Models\Size;
-use App\Models\Color;
-use App\Models\Certification;
 use Illuminate\Http\Request;
+use Exception;
+use App\Models\Category;
 
 
 
@@ -21,56 +17,43 @@ class CategoryController extends Controller
     //     $this->middleware(['permission:ride-edit'], ['only' => ['editride', 'updateride']]);
 
     // }
-    
-    
 
 
+    // ***********Product category Funcation************
 
-
-
-
-
-
-
-
-
-
-
-    // ***********Product Brand Funcation************
-
-    public function indexbrand() {
-        $brands = Brand::orderBy('id', 'desc')->get();
-        return view('backend.brand.index',compact('brands'));
+    public function indexcategory() {
+        $categorys = Category::orderBy('id', 'desc')->get();
+        return view('backend.category.index',compact('categorys'));
     }
     
-    public function createbrand() {
-        return view('backend.brand.create');
+    public function createcategory() {
+        return view('backend.category.create');
     }
-    public function storebrand(Request $request):RedirectResponse
+    public function storecategory(Request $request):RedirectResponse
     {
         $request->validate([
             'name' => 'required',
         ]);
 
         try {
-            $data = new Brand();
+            $data = new Category();
             $data->name = $request->name;
             $data->save();
-            return redirect()->route('brand.index')->with('success', 'brand created successfully.');
+            return redirect()->route('category.index')->with('success', 'category created successfully.');
         } catch (\Exception $e) {
-            return redirect()->route('brand.index')->with('error', 'An error occurred. Please try again.');
+            return redirect()->route('category.index')->with('error', 'An error occurred. Please try again.');
         }
     }
 
-    public function editbrand($id=null){
-        $brands['brand'] = Brand::find($id);
-        if (!$brands['brand']) {
+    public function editcategory($id=null){
+        $categorys['category'] = Category::find($id);
+        if (!$categorys['category']) {
             return redirect()->back();
         }     
-        return view('backend/brand/edit', $brands);
+        return view('backend/category/edit', $categorys);
     }
 
-    public function updatebrand(Request $request, $id): RedirectResponse
+    public function updatecategory(Request $request, $id): RedirectResponse
     {
         $request->validate([
             'name' => 'required',
@@ -78,14 +61,14 @@ class CategoryController extends Controller
         ]);
         
         try {
-            $data = Brand::findOrFail($id);
+            $data = Category::findOrFail($id);
             $data->name   = $request->input('name');
             $data->status  = $request->input('status');
             $data->save();
 
-                return redirect()->route('brand.index')->with('success', 'Data update successfully.');
+                return redirect()->route('category.index')->with('success', 'Data update successfully.');
             } catch (\Exception $e) {
-                return redirect()->route('brand.index')->with('error', $e->getMessage());
+                return redirect()->route('category.index')->with('error', $e->getMessage());
         }
     }
 }
