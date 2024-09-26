@@ -44,32 +44,6 @@
                 </div>
         
                 <div class="col-md-3 pb-3">
-                    <label for="modeles_id" class="form-label">Model<span class="text-danger">*</span></label>
-                    <select id="modeles_id" name="modeles_id" class="form-select" required>
-                        <option selected disabled>Select One</option>
-                        @foreach ($modeles as $modele)
-                            <option value="{{ $modele->id }}">{{ $modele->name }}</option>
-                        @endforeach
-                    </select>                    
-                    @error('modele_id')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-        
-                <div class="col-md-3 pb-3">
-                    <label for="type_id" class="form-label">Type<span class="text-danger">*</span></label>
-                    <select id="type_id" name="type_id" class="form-select" required>
-                        <option selected disabled>Select One</option>
-                        @foreach ($types as $type)
-                            <option value="{{ $type->id }}">{{ $type->name }}</option>
-                        @endforeach
-                    </select>
-                    @error('type_id')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-        
-                <div class="col-md-3 pb-3">
                     <label for="size_id" class="form-label">Size<span class="text-danger">*</span></label>
                     <select id="size_id" name="size_id" class="form-select" required>
                         <option selected disabled>Select One</option>

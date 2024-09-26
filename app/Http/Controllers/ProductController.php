@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Exception;
 use App\Models\Product;
-use App\Models\Modeles;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\ChildCategory;
+use App\Models\InnerChild;
 use App\Models\Brand;
-use App\Models\Type;
 use App\Models\Size;
 use App\Models\Color;
 use App\Models\Certification;
@@ -18,9 +20,11 @@ class ProductController extends Controller
 {
     public function indexproduct() {
         $data['products'] = Product::where('status', 1)->orderBy('id', 'desc')->paginate(50);
+        $data['categories'] = Category::all();
+        $data['subcategories'] = SubCategory::all();
+        $data['childcategories'] = ChildCategory::all();
+        $data['innerchilds'] = InnerChild::all();
         $data['brands'] = Brand::all();
-        $data['modeles'] = Modeles::all();
-        $data['types'] = Type::all();
         $data['sizes'] = Size::all();
         $data['colors'] = Color::all();
         $data['certifications'] = Certification::all();
@@ -28,9 +32,11 @@ class ProductController extends Controller
     }
     public function inactiveproduct() {
         $data['products'] = Product::where('status', 2)->orderBy('id', 'desc')->paginate(50);
+        $data['categories'] = Category::all();
+        $data['subcategories'] = SubCategory::all();
+        $data['childcategories'] = ChildCategory::all();
+        $data['innerchilds'] = InnerChild::all();
         $data['brands'] = Brand::all();
-        $data['modeles'] = Modeles::all();
-        $data['types'] = Type::all();
         $data['sizes'] = Size::all();
         $data['colors'] = Color::all();
         $data['certifications'] = Certification::all();
@@ -38,9 +44,11 @@ class ProductController extends Controller
     }
     
     public function createproduct() {
+        $data['categories'] = Category::all();
+        $data['subcategories'] = SubCategory::all();
+        $data['childcategories'] = ChildCategory::all();
+        $data['innerchilds'] = InnerChild::all();
         $data['brands'] = Brand::all();
-        $data['modeles'] = Modeles::all();
-        $data['types'] = Type::all();
         $data['sizes'] = Size::all();
         $data['colors'] = Color::all();
         $data['certifications'] = Certification::all();
@@ -99,9 +107,11 @@ class ProductController extends Controller
 
     public function editproduct($id = null) {
         $products['product'] = Product::find($id);
-        $products['brands'] = Brand::all();
-        $products['modeles'] = Modeles::all();
-        $products['types'] = Type::all();
+        $products['categories'] = Category::all();
+        $products['subcategories'] = SubCategory::all();
+        $products['childcategories'] = ChildCategory::all();
+        $products['innerchilds'] = InnerChild::all();
+        $data['brands'] = Brand::all();
         $products['sizes'] = Size::all();
         $products['colors'] = Color::all();
         $products['certifications'] = Certification::all();

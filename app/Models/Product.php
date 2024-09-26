@@ -12,9 +12,11 @@ class Product extends Model
     use HasFactory;
     protected $fillable = [
         'id',
+        'category_id',
+        'subcategory_id',
+        'childcategory_id',
+        'innerChild_id',
         'brand_id',
-        'modeles_id',
-        'type_id',
         'size_id',
         'color_id',
         'certification_id',
@@ -29,17 +31,25 @@ class Product extends Model
         'img',
         'status',
     ];
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class,'category_id');
+    }
+    public function subcategory(): BelongsTo
+    {
+        return $this->belongsTo(Subcategory::class,'subcategory_id');
+    }
+    public function childcategory(): BelongsTo
+    {
+        return $this->belongsTo(Childcategory::class,'childcategory_id');
+    }
+    public function innerChild(): BelongsTo
+    {
+        return $this->belongsTo(InnerChild::class,'innerChild_id');
+    }
     public function brand(): BelongsTo
     {
-        return $this->belongsTo(Brand::class,'brand_id');
-    }
-    public function modeles(): BelongsTo
-    {
-        return $this->belongsTo(Modeles::class,'modeles_id');
-    }
-    public function type(): BelongsTo
-    {
-        return $this->belongsTo(Type::class,'type_id');
+        return $this->belongsTo(Brands::class,'brand_id');
     }
     public function size(): BelongsTo
     {

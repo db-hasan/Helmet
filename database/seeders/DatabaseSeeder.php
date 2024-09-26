@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\Models\User;
-use App\Models\Type;
-use App\Models\Brand;
-use App\Models\Modeles;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\ChildCategory;
+use App\Models\InnerChild;
 use App\Models\Size;
 use App\Models\Color;
 use App\Models\Certification;
@@ -33,17 +34,17 @@ class DatabaseSeeder extends Seeder
     ];
 
 
-    private $types = [
-        'Full Face', 'Half Shell', 'Modular', 'Off Road', 'Open Face', 'Cap', 'Dual Sport',
-    ];
+    // private $types = [
+    //     'Full Face', 'Half Shell', 'Modular', 'Off Road', 'Open Face', 'Cap', 'Dual Sport',
+    // ];
 
-    private $brands = [
-        'Studds', 'Vega', 'LS2', 'AXOR', 'MT', 'Steelbird', 'SKT', 'IBK', 'Others',
-    ];
+    // private $brands = [
+    //     'Studds', 'Vega', 'LS2', 'AXOR', 'MT', 'Steelbird', 'SKT', 'IBK', 'Others',
+    // ];
 
-    private $modeles = [
-        'THUNDER', 'BOLT', 'Others',
-    ];
+    // private $modeles = [
+    //     'THUNDER', 'BOLT', 'Others',
+    // ];
 
     private $sizes = [
         'XS', 'S', 'M', 'L', 'XL', 'XXL', 'Others',
@@ -73,18 +74,10 @@ class DatabaseSeeder extends Seeder
             Warehouse::create(['name' => $warehouse]);
         };
 
-        foreach ($this->types as $type) {
-            Type::create(['name' => $type]);
-        };
-        foreach ($this->brands as $brand) {
-            Brand::create(['name' => $brand]);
-        };
-        foreach ($this->modeles as $modele) {
-            Modeles::create(['name' => $modele]);
-        };
         foreach ($this->sizes as $size) {
             Size::create(['name' => $size]);
         };
+        
         foreach ($this->colors as $color) {
             Color::create(['name' => $color]);
         };
@@ -109,7 +102,5 @@ class DatabaseSeeder extends Seeder
         $role->syncPermissions($permissions);
         $user->syncRoles([$role->id]);
 
-
-        Product::factory(50)->create();
     }
 }

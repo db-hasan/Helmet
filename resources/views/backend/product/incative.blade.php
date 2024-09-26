@@ -22,22 +22,6 @@
                         </select>
                     </div>
                     <div class="col-sm-6 col-md-2 pb-3">
-                        <select id="type_id" name="type_id" class="form-select" required>
-                            <option selected disabled>Models</option>
-                            @foreach ($modeles as $modele)
-                                <option value="{{ $modele->id }}">{{ $modele->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col-sm-6 col-md-2 pb-3">
-                        <select id="type_id" name="type_id" class="form-select" required>
-                            <option selected disabled>Type</option>
-                            @foreach ($types as $type)
-                                <option value="{{ $type->id }}">{{ $type->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col-sm-6 col-md-2 pb-3">
                         <select id="size_id" name="size_id" class="form-select" required>
                             <option selected disabled>Size</option>
                             @foreach ($sizes as $size)

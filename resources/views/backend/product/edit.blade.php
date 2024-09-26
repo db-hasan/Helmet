@@ -39,36 +39,6 @@
                     @enderror
                 </div>
             
-                <!-- Model Field -->
-                <div class="col-md-6 pb-3">
-                    <label for="modeles_id" class="form-label">Model<span class="text-danger">*</span></label>
-                    <select id="modeles_id" name="modeles_id" class="form-select" required>
-                        @foreach ($modeles as $modele)
-                            <option value="{{ $modele->id }}" {{ $modele->modeles_id == $modele->id ? 'selected' : '' }}>
-                                {{ $modele->name }}
-                            </option>
-                        @endforeach
-                    </select>
-                    @error('modeles_id')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-            
-                <!-- Type Field -->
-                <div class="col-md-6 pb-3">
-                    <label for="type_id" class="form-label">Type<span class="text-danger">*</span></label>
-                    <select id="type_id" name="type_id" class="form-select" required>
-                        @foreach ($types as $type)
-                            <option value="{{ $type->id }}" {{ $type->type_id == $type->id ? 'selected' : '' }}>
-                                {{ $type->name }}
-                            </option>
-                        @endforeach
-                    </select>
-                    @error('type_id')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-            
                 <!-- Size Field -->
                 <div class="col-md-6 pb-3">
                     <label for="size_id" class="form-label">Size<span class="text-danger">*</span></label>
